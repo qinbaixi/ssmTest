@@ -1,8 +1,8 @@
 package cn.qut.controller;
 
-
-import cn.qut.domain.Product;
-import cn.qut.service.IProductService;
+import cn.qut.dao.IRoleDao;
+import cn.qut.domain.Role;
+import cn.qut.service.IRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,24 +11,23 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @Controller
-@RequestMapping("/product")
-public class ProductController {
-
+@RequestMapping("/role")
+public class RoleController {
     @Autowired
-    private IProductService productService;
+    private IRoleService roleService;
 
     @RequestMapping("/findAll.do")
     public ModelAndView findAll() throws Exception {
         ModelAndView mv = new ModelAndView();
-        List<Product> productList = productService.findAll();
-        mv.addObject("productList", productList);
-        mv.setViewName("product-list");
+        List<Role> roleList = roleService.findAll();
+        mv.addObject("roleList", roleList);
+        mv.setViewName("role-list");
         return mv;
     }
 
     @RequestMapping("/save.do")
-    public String save(Product product){
-        productService.save(product);
+    public String save(Role role) throws Exception {
+        roleService.save(role);
         return "redirect:findAll.do";
     }
 }
