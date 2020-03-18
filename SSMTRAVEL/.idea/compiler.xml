@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="SSMTRAVEL_utils" />
+        <module name="SSMTRAVEL_domain" />
+        <module name="SSMTRAVEL_service" />
+        <module name="SSMTRAVEL_web" />
+        <module name="SSMTRAVEL_dao" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
