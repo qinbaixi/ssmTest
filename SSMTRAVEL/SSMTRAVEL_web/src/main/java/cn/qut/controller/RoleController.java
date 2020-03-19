@@ -18,6 +18,18 @@ public class RoleController {
     @Autowired
     private IRoleService roleService;
 
+
+    //角色详情查询
+    @RequestMapping("/findById.do")
+    public ModelAndView findById(@RequestParam(name = "id", required = true) String roleId) throws Exception {
+        ModelAndView mv = new ModelAndView();
+        Role role = roleService.findById(roleId);
+
+        mv.addObject("role", role);
+        mv.setViewName("role-show");
+        return mv;
+    }
+
     @RequestMapping("/deleteRole.do")
     public String deleteRole(@RequestParam(name="id",required = true) String roleId) throws Exception {
         roleService.deleteRoleById(roleId);

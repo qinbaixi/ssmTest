@@ -31,8 +31,19 @@ public interface IRoleDao {
     @Insert("insert into role(roleName,roleDesc) values(#{roleName},#{roleDesc})")
     void save(Role role) throws Exception;
 
-    @Select("select * from role where id =#{roleId}")
-    Role findById(String roleId) throws Exception;
+    /**
+     * 查询角色详细信息包括所含资源信息
+     * @param roleId
+     * @return
+     */
+    @Select("select * from role where id=#{roleId}")
+    @Results({
+            @Result(id = true,property = "id",column = "id"),
+            @Result(property = "roleName",column = "roleName"),
+            @Result(property = "roleDesc",column = "roleDesc"),
+            @Result(property = "permissions",column = "id",javaType = java.util.List.class,many = @Many(select = "cn.qut.dao.IPermissionDao.findPermissionByRoleId"))
+    })
+    Role findById(String roleId);
 
     @Select("select * from permission where id not in (select permissionId from role_permission where roleId=#{roleId})")
     List<Permission> findOtherPermissions(String roleId) throws Exception;
