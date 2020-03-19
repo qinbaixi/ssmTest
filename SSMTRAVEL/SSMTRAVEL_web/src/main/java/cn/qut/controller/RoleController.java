@@ -18,6 +18,12 @@ public class RoleController {
     @Autowired
     private IRoleService roleService;
 
+    @RequestMapping("/deleteRole.do")
+    public String deleteRole(@RequestParam(name="id",required = true) String roleId) throws Exception {
+        roleService.deleteRoleById(roleId);
+        return "redirect:findAll.do";
+    }
+
     //给角色添加权限
     @RequestMapping("/addPermissionToRole.do")
     public String addPermissionToRole(@RequestParam(name = "roleId", required = true) String roleId, @RequestParam(name = "ids", required = true) String[] permissionIds) throws Exception {

@@ -41,4 +41,9 @@ public class IRoleServiceImpl implements IRoleService {
             roleDao.addPermissionToRole(roleId,permissionId);
         }
     }
+
+    @Override
+    public void deleteRoleById(String roleId) throws Exception {
+        roleDao.deleteRoleById(roleId);
+    }
 }
