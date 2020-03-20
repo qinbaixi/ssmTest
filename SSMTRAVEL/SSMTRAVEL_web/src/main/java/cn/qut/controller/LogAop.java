@@ -56,7 +56,7 @@ public class LogAop {
         long time = new Date().getTime() - visitTime.getTime(); //获取访问的时长
 
         String url = "";
-        //获取url
+        //获取url且访问的不是AopLog
         if (clazz != null && method != null && clazz != LogAop.class) {
             //1.获取类上的@RequestMapping("/orders")
             RequestMapping classAnnotation = (RequestMapping) clazz.getAnnotation(RequestMapping.class);

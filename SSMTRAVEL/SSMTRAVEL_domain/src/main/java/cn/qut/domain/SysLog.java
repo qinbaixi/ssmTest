@@ -1,5 +1,7 @@
 package cn.qut.domain;
 
+import cn.qut.DateUtils;
+
 import java.util.Date;
 
 public class SysLog {
@@ -29,6 +31,11 @@ public class SysLog {
     }
 
     public String getVisitTimeStr() {
+
+        if(visitTime!=null)
+        {
+            visitTimeStr = DateUtils.date2String(visitTime,"yyyy-MM-dd HH:mm");
+        }
         return visitTimeStr;
     }
 
