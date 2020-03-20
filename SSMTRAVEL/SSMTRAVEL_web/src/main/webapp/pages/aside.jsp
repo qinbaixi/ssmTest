@@ -41,12 +41,13 @@
 						href="${pageContext.request.contextPath}/user/findAll.do"> <i
 							class="fa fa-circle-o"></i> 用户管理
 					</a>
-						</security:authorize>
+
 					</li>
 					<li id="system-setting"><a
 						href="${pageContext.request.contextPath}/role/findAll.do"> <i
 							class="fa fa-circle-o"></i> 角色管理
 					</a></li>
+					</security:authorize>
 					<li id="system-setting"><a
 						href="${pageContext.request.contextPath}/permission/findAll.do">
 							<i class="fa fa-circle-o"></i> 资源权限管理

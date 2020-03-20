@@ -7,10 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SSMTRAVEL_utils" />
-        <module name="SSMTRAVEL_service" />
-        <module name="SSMTRAVEL_domain" />
         <module name="SSMTRAVEL_web" />
         <module name="SSMTRAVEL_dao" />
+        <module name="SSMTRAVEL_domain" />
+        <module name="SSMTRAVEL_service" />
       </profile>
     </annotationProcessing>
   </component>
