@@ -53,4 +53,5 @@ public interface IRoleDao {
 
     @Delete("delete from role where id=#{roleId}")
     void deleteRoleById(String roleId)throws Exception;
+
 }

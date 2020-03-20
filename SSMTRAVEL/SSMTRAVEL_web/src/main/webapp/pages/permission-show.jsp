@@ -80,7 +80,7 @@
         <section class="content-header">
             <h1>
                 权限管理
-                <small>全部用户</small>
+                <small>权限详情</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="${pageContext.request.contextPath}/index.jsp"><i
@@ -88,7 +88,7 @@
                 <li><a
                         href="${pageContext.request.contextPath}/permission/findAll.do">权限管理</a></li>
 
-                <li class="active">全部用户</li>
+                <li class="active">权限详情</li>
             </ol>
         </section>
         <!-- 内容头部 /-->
