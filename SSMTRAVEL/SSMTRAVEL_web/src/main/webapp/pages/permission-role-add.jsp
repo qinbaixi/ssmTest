@@ -131,7 +131,9 @@
 						</table>
 				<!--订单信息/--> <!--工具栏-->
 				<div class="box-tools text-center">
-					<button type="submit" class="btn bg-maroon">保存</button>
+					<c:if test="${roleList.size()>0}">
+					<button type="submit" class="btn bg-maroon" id="save">保存</button>
+					</c:if>
 					<button type="button" class="btn bg-default"
 						onclick="history.back(-1);">返回</button>
 				</div>
@@ -259,6 +261,7 @@
 				}
 				$(this).data("clicks", !clicks);
 			});
+
 		});
 
 		// 设置激活菜单
